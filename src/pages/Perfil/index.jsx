@@ -11,7 +11,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { Box } from '@mui/material';
+import { Box, MenuItem, Rating, Select, TextField } from '@mui/material';
 // import Button from '@mui/material/Button';
 // import { styled } from '@mui/material/styles';
 // import Dialog from '@mui/material/Dialog';
@@ -39,7 +39,16 @@ import { Box } from '@mui/material';
  import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
-
+ import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+ // import { useTheme } from '@mui/material/styles';
+ 
+ 
+export default function Perfil() {
+  
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -48,8 +57,17 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+  const [value, setValue] =React.useState(5);
+  const [open, setOpen] = React.useState(false);
+  // const theme = useTheme();
+ 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
-export default function Perfil() {
+  const handleClose = () => {
+    setOpen(false);
+  };
    
 
   return (
@@ -57,9 +75,9 @@ export default function Perfil() {
       
         <br />
         <Box sx={{ flexGrow: 1 }}> 
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
         <Grid item xs={8}>
-        <Item>  
+        {/* <Item>   */}
          
      <Card   className='card1'  >
       <div  className='perfil1'> 
@@ -83,6 +101,8 @@ export default function Perfil() {
         <Typography gutterBottom variant="h5" component="div" text-align="center">
           Doctor 1
         </Typography>
+        <Rating name="read-only" value={value} readOnly />
+
         <Typography variant="body2" color="text.secondary">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis nostrum ut eos tenetur earum nobis animi quas
         </Typography>
@@ -96,11 +116,11 @@ export default function Perfil() {
       </CardActions>
       
     </Card>
-    </Item> 
+    {/* </Item>  */}
     </Grid>
    <br />
    <Grid item xs={4}>
-          <Item>
+          {/* <Item> */}
           <Card sx={{ maxWidth: 345 }}  className='card4'>
       
       <CardContent>
@@ -114,22 +134,88 @@ export default function Perfil() {
         </div>
       </CardContent>
       <CardActions>
-        <Button size="small">Contacto con Laboratorios</Button>
+        <Button size="small"   onClick={handleClickOpen}>Contacto con Laboratorios</Button>
+        <Dialog
+        // fullScreen={fullScreen}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="responsive-dialog-title"
+      >
+        <DialogTitle id="responsive-dialog-title">
+          {"Escribir"}
+        </DialogTitle>
+       
+        <DialogContent>
+        
+        <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+            variant="standard" 
+          />
+          <DialogContentText>
+             <textarea name="" id="" cols="50" rows="10"></textarea>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClose}>
+            Cancelar
+          </Button>
+          <Button onClick={handleClose} autoFocus>
+            Enviar
+          </Button>
+        </DialogActions>
+      </Dialog>
       </CardActions>
       <CardActions>
-        <Button size="small">Contacto con Pacientes</Button>
+        <Button size="small"   onClick={handleClickOpen}>Contacto con Pacientes</Button>
+        <Dialog
+        // fullScreen={fullScreen}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="responsive-dialog-title"
+      >
+        <DialogTitle id="responsive-dialog-title">
+          {"Escribir"}
+        </DialogTitle>
+        <DialogContent>
+        <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+            variant="standard" 
+          />
+          <DialogContentText>
+             <textarea name="" id="" cols="50" rows="10"></textarea>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleClose}>
+            Cancelar
+          </Button>
+          <Button onClick={handleClose} autoFocus>
+            Enviar
+          </Button>
+        </DialogActions>
+      </Dialog>
       </CardActions>
        
 
        
     </Card>
      
-    </Item>
+    {/* </Item> */}
         </Grid>
 
      <br />
      <Grid item xs={8}>
-          <Item> 
+          {/* <Item>  */}
      <Card sx={{ maxWidth: 1000 }} className='card3'  >
       
       <CardContent>
@@ -152,7 +238,7 @@ export default function Perfil() {
     </LocalizationProvider>
        
     </Card>
-    </Item>
+    {/* </Item> */}
         </Grid>
      <br />
      {/* <Grid item xs={8}>
