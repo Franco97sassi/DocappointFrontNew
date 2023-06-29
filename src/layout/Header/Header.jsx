@@ -14,12 +14,23 @@ import MenuItem from '@mui/material/MenuItem';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import { useAuth } from '../../components/context/AuthContext';
 import './Header.css'
+import { useNavigate } from 'react-router-dom';
+import docca from '../../assets/Ic2.svg'
 
 export const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const auth = useAuth();
+    const navigate = useNavigate();
+
+    const handleProfile = () => {
+        navigate('/perfil');
+    };
+
+    const handleAdmin = () => {
+        navigate('/admin');
+    };
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -39,7 +50,8 @@ export const Header = () => {
         <AppBar position="static" id='navBar'>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <LocalHospitalIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    {/* <LocalHospitalIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+                    <img src={docca} style={{ height: '5rem', width: '5rem'}}/>
                     <Typography
                         variant="h6"
                         noWrap
@@ -51,8 +63,9 @@ export const Header = () => {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: 'black',
                             textDecoration: 'none',
+                            marginRight: '1.5em'
                         }}
                     >
                         DOCCA-POINT
@@ -131,7 +144,7 @@ export const Header = () => {
                         <Button
                             onClick={handleCloseNavMenu}
                             sx={{ my: 2, color: 'white', display: 'block' }}
-                            href="especialistas"
+                            href="/especialistas"
                         >
                             ESPECIALISTAS
                         </Button>
@@ -144,7 +157,7 @@ export const Header = () => {
                                 <div>
                                     <Tooltip title="Open settings">
                                         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                            <Avatar alt="Remy Sharp"/>
                                         </IconButton>
                                     </Tooltip>
                                     <Menu
@@ -163,8 +176,12 @@ export const Header = () => {
                                         open={Boolean(anchorElUser)}
                                         onClose={handleCloseUserMenu}
                                     >
-                                        <MenuItem onClick={handleCloseUserMenu}>
+                                        <MenuItem onClick={() => {handleCloseUserMenu(); handleProfile()}}>
                                             <Typography textAlign="center">PERFIL</Typography>
+                                        </MenuItem>
+
+                                        <MenuItem onClick={() => {handleCloseUserMenu(); handleAdmin()}}>
+                                            <Typography textAlign="center">ADMIN</Typography>
                                         </MenuItem>
 
                                         <MenuItem onClick={auth.logout}>
@@ -174,13 +191,13 @@ export const Header = () => {
                                     </Menu>
                                 </div>
                                 :
-                                    <Button
-                                        onClick={handleCloseNavMenu}
-                                        sx={{ mr: 2, color: 'white', display: 'block', }}
-                                        href="login"
-                                    >
-                                        INICIO SESION
-                                    </Button>                                
+                                <Button
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ mr: 2, color: 'white', display: 'block', }}
+                                    href="login"
+                                >
+                                    INICIO SESION
+                                </Button>
                         }
                     </Box>
                 </Toolbar>

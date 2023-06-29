@@ -7,6 +7,7 @@ import { Button, CircularProgress, Container } from '@mui/material';
 import CategoryNavbar from '../../components/CategoryNavbar/CategoryNavbar';
 import axios from 'axios';
 import { DoctorCard } from '../../components/DoctorCard/DoctorCard';
+import './Especialistas.css'
 
 
 export const Especialistas = () => {
@@ -15,28 +16,16 @@ export const Especialistas = () => {
 
     React.useEffect(() => {
         getDoctors();
-    }, []);
-
-    const darkTheme = createTheme({
-        palette: {
-            mode: 'dark',
-            primary: {
-                main: '#1a237e', // Customize your primary color
-            },
-            secondary: {
-                main: '#f57c00', // Customize your secondary color
-            },
-        },
-    });
+    }, []);   
 
     const getDoctors = async () => {
-        const userData = await axios.get('http://localhost:4000/users');
+        const userData = await axios.get('http://localhost:4000/doctors');
         setDoctors(userData.data);
     }
 
     const handleCategoryChange = async (category) => {
         try {
-            setLoading(true)
+            setLoading(true);
             if (category === 'todos') {
                 getDoctors();
             } else {
@@ -44,49 +33,56 @@ export const Especialistas = () => {
                 setDoctors(response.data);
             }
         } catch (error) {
-            setDoctors([])
-
+            setDoctors([]);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     };
 
+
     return (
-        <ThemeProvider theme={darkTheme}>
+        <>
             <CssBaseline />
             <Container
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    minHeight: '100vh',
-                    background: darkTheme.palette.background.default,
-                    color: darkTheme.palette.text.primary,
+                    minHeight: '100vh',                    
                 }}>
                 <CategoryNavbar onCategoryChange={handleCategoryChange} />
-                {loading ? (
-                    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
-                        <CircularProgress /> 
-                    </div>
-                ) :
                 <Box
                     sx={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        gap: 1,
-                        flexWrap: 'wrap',
-                        marginTop: 9
-                    }}>
-                    {doctors.length > 0 ? (
-                        doctors.map(doctor => (
-                            <DoctorCard key={doctor.id} doctor={doctor} />
-                        ))
-                    ) : (
-                        <Typography variant="body1">No se encontraron doctores en esta categoría.</Typography>
-                    )}
-                </Box>}
+                        borderRadius: '12px',
+                        padding: 4,
+                    }}
+                    id="doctor-container"
+                >
+                    {loading ? (
+                        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
+                            <CircularProgress />
+                        </Box>
+                    ) :
+                        (<Box sx={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            flexWrap: 'wrap',
+                            gap: 5,
+                            borderRadius: '12px',
+                        }}>
+                            {
+                                doctors.length > 0 ? (
+                                    doctors.map(doctor => (
+                                        <DoctorCard key={doctor.id} doctor={doctor} />
+                                    ))
+                                ) : (
+                                    <Typography variant="body1">No se encontraron doctores en esta categoría.</Typography>
+                                )
+                            }
+                        </Box>)}
+                </Box>
             </Container>
-        </ThemeProvider>
+        </>
     );
 };
 
