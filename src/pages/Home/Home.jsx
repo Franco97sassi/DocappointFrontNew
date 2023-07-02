@@ -5,10 +5,11 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Box from '@mui/material/Box';
 import { Button, Container } from '@mui/material';
 import docca from '../../assets/DA1.jpg';
-
+import "./Home.css"
 export const Home = () => {
   return (
     <>
+    <div className='background'  >  
       <CssBaseline />
       <Container
         sx={{
@@ -18,7 +19,8 @@ export const Home = () => {
           justifyContent: 'space-between',
           minHeight: '100vh',
         }}>
-        <img src={docca} style={{ height: 200 }} />
+          
+        <img src={docca} style={{ height: 200 }} /> 
         <Box
           sx={{
             display: 'flex',
@@ -33,11 +35,13 @@ export const Home = () => {
           </Typography>
           <Button sx={{ gap: 2, backgroundColor: '#82BF45', '&:hover': {backgroundColor: '#037F8C'} }} variant="contained" href="/especialistas">
             Encuentra a tu especialista <ArrowForwardIcon />
-          </Button>
+          </Button>  <br />
+          
         </Box>
         <Box>
         </Box>
       </Container>
+      </div>
     </>
   );
 };
