@@ -28,7 +28,7 @@ export const TurnosReservados = () => {
     width: '100%',
     maxWidth: 2000,
     bgcolor: 'background.paper ',
-    
+
   };
   return (
     <Card sx={{ border: 'solid black 1px' }}>
@@ -38,11 +38,14 @@ export const TurnosReservados = () => {
         </Typography>
         <List sx={{ mt: 2 }}>
           {turnos.map(turno => (
-            <List sx={style} component="nav" aria-label="mailbox folders">            <ListItem key={turno.id}>
-              <ListItemText primary={`Fecha: ${turno.fecha} Hora: ${turno.hora}`} secondary={`Doctor: ${turno.usuario}`}   />
-              <Button  variant="contained">Cancelar Cita</Button>
+            <List sx={style} component="nav" aria-label="mailbox folders">     
+             <ListItem key={turno.id}>
+              <ListItemText primary={`Fecha: ${turno.fecha} Hora: ${turno.hora}`} secondary={`Doctor: ${turno.usuario}`} />
+              <Button variant="contained">Cancelar Cita</Button>
 
-            </ListItem>  <Divider/> </List> 
+            </ListItem>
+              <Divider />
+            </List>
           ))}
         </List>
       </CardContent>
