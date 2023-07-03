@@ -3,17 +3,13 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
 const categories = [
-  { label: 'Todos', value: 'todos' },
-  { label: 'Medicos Generales', value: 'Medicos Generales' },
-  { label: 'Nutricionistas', value: 'Nutricionistas' },
-  { label: 'Pediatrias', value: 'Pediatrias' },
-  { label: 'Psicologos', value: 'Psicologos' },
-  { label: 'Enfermeros', value: 'Enfermeros' },
-  { label: 'Oftalmologos', value: 'Oftalmologos' },
-  { label: 'Odontologos', value: 'Odontologos' },
+  { label: 'Radiografia', value: 'Radiografia' },
+  { label: 'Tomografia', value: 'Tomografia' },
+  { label: 'Ultrasonido', value: 'Ultrasonido' },
+  
 ];
 
-const CategoryNavbar = ({ onCategoryChange }) => {
+const CategoryAnalisis = ({ onCategoryChange }) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -43,4 +39,4 @@ const CategoryNavbar = ({ onCategoryChange }) => {
   );
 };
 
-export default CategoryNavbar;
+export default CategoryAnalisis;

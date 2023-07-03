@@ -15,6 +15,7 @@ import { Consulta } from "./pages/Consulta/Consulta"
 import { createTheme, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { Turnos } from "./pages/Turnos/Turnos";
+import { Analisis } from "./pages/Analisis/Analisis";
 
 const router = createBrowserRouter([
   { path: "*", Component: Root },
@@ -51,11 +52,13 @@ function Root() {
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
             <Route path="/especialistas/*" element={<Especialistas />} />
+            <Route path="/analisis/*" element={<Analisis />} />
+
             <Route path="/admin/*" element={<UserAdmin />} />
             <Route path="/perfil/*" element={<Perfil />} />
             <Route path="/perfilPacientes/*" element={<PerfilPacientes />} />
             <Route path="/perfilLaboratorios/*" element={<PerfilLaboratorios />} />
-
+       
             <Route path="/consulta/*" element={<Consulta />} />
             <Route path="/turnos/*" element={<Turnos />} />
           </Routes>

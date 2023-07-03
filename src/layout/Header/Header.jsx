@@ -102,13 +102,15 @@ export const Header = () => {
                         >
 
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">CONSULTA RAPIDA</Typography>
+                                <Typography textAlign="center">CONSULTA RAPIDA/LABORATORIO</Typography>
                             </MenuItem>
 
                             <MenuItem onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">ESPECIALISTAS</Typography>
                             </MenuItem>
-
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center">ANALISIS Y ESTUDIOS MEDICOS </Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
                     <LocalHospitalIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -138,7 +140,7 @@ export const Header = () => {
                             sx={{ my: 2, color: 'white', display: 'block' }}
                             href="/consulta"
                         >
-                            CONSULTA RAPIDA
+                            CONSULTA RAPIDA/LABORATORIO
                         </Button>
 
                         <Button
@@ -147,6 +149,13 @@ export const Header = () => {
                             href="/especialistas"
                         >
                             ESPECIALISTAS
+                        </Button>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                            href="/analisis"
+                        >
+                            ANALISIS Y ESTUDIOS MEDICOS
                         </Button>
                     </Box>
 

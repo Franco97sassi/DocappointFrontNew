@@ -41,9 +41,9 @@ export const Footer = () => {
            <Typography variant="h6" color="black"><img src= {telefono} width={25}  height={25} /> 
              +5216622297062
            </Typography>
-          <a href=""> 
+          <a href="https://www.facebook.com/"> 
           <img src={facebook}  width={25}  height={25} /></a>
-          <a href="">
+          <a href="https://www.instagram.com/">
           <img src={instagram} width={25}  height={25}  />   </a>
         </Box>
       </AppBar>    
