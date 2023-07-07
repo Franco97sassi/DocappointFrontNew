@@ -25,12 +25,12 @@ export const PerfilLaboratorios = () => {
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, justifyContent: 'center', paddingX: '20px', margin: 3.2 }}>
             <Grid container spacing={2} sx={{ margin: '' }}>
                 <Grid  sx={{ display:"flex" ,flexDirection:"column",gap:3}}item md={4} >
-                    <Card sx={{ display:"flex",gap:3,border: 'solid black 1px' }}>
+                    <Card sx={{ display:"flex",gap:3 }}>
                         <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-                        <CardMedia sx={{ display: 'flex', justifyContent: 'center', backgroundColor: 'gray', width: '100%', borderRadius: '2px', padding: 2,border:"solid 5px #17202A "  }}>
+                        <CardMedia  sx={{ display: 'flex', justifyContent: 'center',  width: '100%', borderRadius: '2px', padding: 2,  }}>
                             <Avatar
                             //  alt={user.fullName} 
-                             src={titan} sx={{ width: 180, height: 180, border: 'solid white 5px' }} />
+                             src={titan} sx={{ width: 200, height: 200, border: 'solid white 5px' }} />
 
                         </CardMedia>
                             <Box className='text2' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
@@ -43,6 +43,9 @@ export const PerfilLaboratorios = () => {
                                 <Typography variant="body2" color="text.secondary">
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis nostrum ut eos tenetur earum nobis animi quas
                                 </Typography>
+                                <Typography variant="caption" color="text.secondary" display= "block" >
+                                    Direccion:Calle 123, Hermosillo,Sonora,Mx
+                                 </Typography>
                             </Box>
                         </CardContent>
                     </Card> 
@@ -50,9 +53,9 @@ export const PerfilLaboratorios = () => {
 
                 </Grid>
                 <Grid item md={8}>
-                    <Card sx={{ border: 'solid black 1px' }}>
+                    <Card >
                         <CardContent >
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                             <Typography>Nombre:</Typography>
                                 {/* <Typography>{user.name}</Typography> */}
                                                               {/* <Typography>Nombre1</Typography>   */}
@@ -63,7 +66,7 @@ export const PerfilLaboratorios = () => {
       </Stack>
     </Box>
                             </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 <Typography>Apellido:</Typography>   
                                  {/* <Typography>Apellido1</Typography>   */}
                                  <Box sx={{ width: '25%' }}>
@@ -74,7 +77,7 @@ export const PerfilLaboratorios = () => {
     </Box>
                                 {/* <Typography>{user.lastName}</Typography> */}
                             </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 <Typography>Correo:</Typography>   
                                  {/* <Typography>Correo1@gmail.com</Typography>   */}
                                  <Box sx={{ width: '25%' }}>
@@ -85,7 +88,7 @@ export const PerfilLaboratorios = () => {
     </Box>
                                 {/* <Typography>{user.email}</Typography> */}
                             </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 <Typography>Tipo de Usuario:</Typography> 
                                 <Box sx={{ width: '25%' }}>
       <Stack  spacing={2}>
@@ -96,7 +99,7 @@ export const PerfilLaboratorios = () => {
                                    {/* <Typography>Doctor</Typography>   */}
                                 {/* <Typography>{user.userType}</Typography> */}
                             </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 {/* <Typography>Telefono:</Typography>  */}
                                   <Typography>Telefono:</Typography>    
                                 <Box sx={{ width: '25%' }}>

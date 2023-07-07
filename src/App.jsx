@@ -29,6 +29,9 @@ export default function App() {
 function Root() {
   const darkTheme = createTheme({
     palette: {
+      background:{
+        default: '#e6e6e6',
+      },
       mode: 'light',
       primary: {
         main: '#ff4400',      

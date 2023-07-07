@@ -6,7 +6,9 @@ import { ReseñasCard } from '../../components/ReseñasCard/ReseñasCard';
 import { RedesSocialesCard } from '../../components/RedesSocialesCard/RedesSocialesCard';
 import { TurnosReservados } from '../../components/TurnosReservadosCard/TurnosCard';
 import { Mensajeria } from '../../components/Mensajeria/Mensajeria';
+import "./styles.css"
 export const PerfilPacientes = () => {
+     
     const user = JSON.parse(localStorage.getItem('user'));
     // user.fullName = user.name + " " + user.lastName;
     // user.category = user.category[0].toUpperCase() + user.category.substring(1);
@@ -19,15 +21,18 @@ export const PerfilPacientes = () => {
         color: theme.palette.text.secondary,
       }));
     return (
+        <> 
+         
+       
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, justifyContent: 'center', paddingX: '20px', margin: 3.2 }}>
             <Grid  container spacing={2} sx={{ margin: '' }}>
                 <Grid sx={{ display:"flex" ,flexDirection:"column",gap:3}} item md={4} >
-                    <Card sx={{ display:"flex",gap:3, border: 'solid black 1px' }}>
+                    <Card sx={{ display:"flex",gap:3   }}>
                         <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-                            <CardMedia sx={{ display: 'flex', justifyContent: 'center', backgroundColor: 'gray', width: '100%', borderRadius: '2px', padding: 2,border:"solid 5px #037F8C" }}>
+                            <CardMedia sx={{ display: 'flex', justifyContent: 'center',   width: '100%', borderRadius: '2px', padding: 2 }}>
                                 <Avatar
                                     //  alt={user.fullName} 
-                                    src={titan} sx={{ width: 180, height: 180, border: 'solid white 5px' }} />
+                                    src={titan} sx={{ width: 200, height: 200, border: 'solid white 5px' }} />
 
                             </CardMedia>
                             <Box className='text2' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
@@ -35,7 +40,7 @@ export const PerfilPacientes = () => {
                                     {user.fullName}
                                 </Typography> */}
                                 
-                                <Typography variant="h5" component="div" text-align="center">
+                                <Typography variant="h5" component="div" text-align="center" >
                                     Paciente1
                                 </Typography> 
                                 {/* <Rating
@@ -44,7 +49,9 @@ export const PerfilPacientes = () => {
                                 /> */}
                                 <Typography variant="body2" color="text.secondary">
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis nostrum ut eos tenetur earum nobis animi quas
-                                </Typography>
+                                </Typography><Typography variant="caption" color="text.secondary" display= "block" >
+                                    Direccion:Calle 123, Hermosillo,Sonora,Mx
+                                 </Typography>
                             </Box>
                         </CardContent>
                     </Card>
@@ -55,9 +62,9 @@ export const PerfilPacientes = () => {
                 </Grid>
 
                 <Grid item md={8}>
-                    <Card sx={{ border: 'solid black 1px' }}>
+                    <Card  >
                         <CardContent >
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 <Typography>Nombre:</Typography>
                                 {/* <Typography>{user.name}</Typography> */}
                                                               {/* <Typography>Nombre1</Typography>   */}
@@ -69,7 +76,7 @@ export const PerfilPacientes = () => {
     </Box>
                             </Box>
                              
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 <Typography>Apellido:</Typography>   
                                  {/* <Typography>Apellido1</Typography>   */}
                                  <Box sx={{ width: '25%' }}>
@@ -80,7 +87,7 @@ export const PerfilPacientes = () => {
     </Box>
                                 {/* <Typography>{user.lastName}</Typography> */}
                             </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 <Typography>Correo:</Typography>   
                                  {/* <Typography>Correo1@gmail.com</Typography>   */}
                                  <Box sx={{ width: '25%' }}>
@@ -91,7 +98,7 @@ export const PerfilPacientes = () => {
     </Box>
                                 {/* <Typography>{user.email}</Typography> */}
                             </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 <Typography>Tipo de Usuario:</Typography> 
                                 <Box sx={{ width: '25%' }}>
       <Stack  spacing={2}>
@@ -102,7 +109,7 @@ export const PerfilPacientes = () => {
                                    {/* <Typography>Doctor</Typography>   */}
                                 {/* <Typography>{user.userType}</Typography> */}
                             </Box>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid white 1px', padding: '18.7px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', borderBottom: 'solid gray 1px', padding: '18.7px' }}>
                                 {/* <Typography>Telefono:</Typography>  */}
                                   <Typography>Telefono:</Typography>    
                                 <Box sx={{ width: '25%' }}>
@@ -132,16 +139,19 @@ export const PerfilPacientes = () => {
                         <Mensajeria />
                     </Grid> */}
             </Grid>
- 
-            <Grid container spacing={2}>
-
+            
+             <Grid container spacing={2}>
+            
                 {/* <Grid item md={4}>
                     <ReseñasCard />
                 </Grid> */}
+                 
                 <Grid item md={12}>
                     <TurnosReservados />
                 </Grid>
             </Grid>
         </Box>
+    
     )
+      </>)
 }

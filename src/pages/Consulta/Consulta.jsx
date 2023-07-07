@@ -5,7 +5,7 @@ export const Consulta = () => {
 
 
   const [search, setSearch] = useState("")
-  const searcher = (e) => {
+  const searcher = (e) => { 
     setSearch(e.target.value)
   }
   // const results = !search ? doctores : doctores.filter((dato)=> dato.sintoma.toLowerCase().includes(search.toLocaleLowerCase()))

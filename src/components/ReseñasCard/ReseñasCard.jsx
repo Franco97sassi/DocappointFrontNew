@@ -24,13 +24,13 @@ export const ReseñasCard = () => {
   ];
 
   return (
-    <Card sx={{ border: 'solid black 1px' }}>
+    <Card sx={{ border: 'solid black 0px' }}>
       <CardContent>
         <Typography variant="h6" component="div">
           Reseñas
         </Typography>
         {reseñas.map(reseña => (
-          <Box key={reseña.id} sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
+          <Box key={reseña.id} sx={{ display: 'flex', alignItems: 'center', mt: 2  }}>
             <Avatar alt={reseña.nombre} />
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle1" component="div">

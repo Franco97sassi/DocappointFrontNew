@@ -31,7 +31,7 @@ export const TurnosReservados = () => {
 
   };
   return (
-    <Card sx={{ border: 'solid black 1px' }}>
+    <Card  >
       <CardContent>
         <Typography variant="h6" component="div">
           Turnos Reservados
